@@ -4,12 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    def app = rootProject.ext.android
+
+    compileSdk app.compileSdkVersion
 
     defaultConfig {
         applicationId "com.example.sunnyweather"
-        minSdk 21
-        targetSdk 30
+        minSdk app.minSdkVersion
+        targetSdk app.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -29,15 +31,24 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+    def depend = rootProject.ext.dependVersion
 
-    implementation 'androidx.core:core-ktx:1.5.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.core:core-ktx:$depend.core_ktx"
+    implementation "androidx.appcompat:appcompat:$depend.appcompat"
+    implementation "com.google.android.material:material:$depend.material"
+    implementation "androidx.constraintlayout:constraintlayout:$depend.constraintlayout"
+    testImplementation "junit:junit:4.+"
+    androidTestImplementation "androidx.test.ext:junit:$depend.junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$depend.espresso_core"
+    implementation "androidx.activity:activity-ktx:$depend.activity_ktx"// ViewModel初始化
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$depend.livedata_ktx"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$depend.swipe_refresh_layout"
+    implementation "com.squareup.retrofit2:retrofit:$depend.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$depend.retrofit"
 }
