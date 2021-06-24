@@ -46,9 +46,11 @@ dependencies {
     testImplementation "junit:junit:4.+"
     androidTestImplementation "androidx.test.ext:junit:$depend.junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$depend.espresso_core"
-    implementation "androidx.activity:activity-ktx:$depend.activity_ktx"// ViewModel初始化
+    implementation "androidx.fragment:fragment-ktx:$depend.fragment_ktx"// ViewModel初始化
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$depend.livedata_ktx"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$depend.swipe_refresh_layout"
     implementation "com.squareup.retrofit2:retrofit:$depend.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$depend.retrofit"
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$depend.brvah"
+    implementation "com.safframework.log:saf-logginginterceptor:$depend.logging_interceptor"
 }

@@ -14,5 +14,7 @@ class MyApplication : Application() {
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var mContext: Context
+
+        const val TOKEN = "tvYZ25k0H5buimeU"
     }
 }
